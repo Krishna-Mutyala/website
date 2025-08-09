@@ -1,9 +1,9 @@
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Hi, I'm Krishna Mutyala</h1>
-      <h2>Full Stack Developer</h2>
-      <p>I build modern, responsive web applications with a focus on clean code and great user experience.</p>
+      <h1>Hi, I'm Krishna Rao Mutyala</h1>
+      <h2>Software Development Engineer</h2>
+      <p>Results-driven Software Engineer with 2.6+ years' experience in backend and full-stack development, specializing in enterprise-grade RESTful API design, scalable cloud solutions, and automation using .NET Core, Angular, and AWS.</p>
       <div class="cta-buttons">
         <a routerLink="/projects" class="btn btn-primary">View My Work</a>
         <a routerLink="/contact" class="btn btn-secondary">Get in Touch</a>
@@ -14,57 +14,102 @@
 
 <section class="featured-projects">
   <div class="container">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <app-project-card 
-        *ngFor="let project of featuredProjects$ | async"
-        [project]="project">
-      </app-project-card>
+    <h2>Experience Highlights</h2>
+    <div class="experience-grid">
+      <div class="experience-item">
+        <h3>Broadridge Financial Solutions</h3>
+        <p class="role">Software Development Engineer</p>
+        <p class="date">June 2023 - Present</p>
+        <ul>
+          <li>Engineered high-performance RESTful APIs in .NET Core with Angular UI</li>
+          <li>Automated report generation, reducing processing time by 95%</li>
+          <li>Developed workflow automation pipelines, cutting manual processing by 92%</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Software Developer Intern</h3>
+        <p class="date">January 2023 - June 2023</p>
+        <ul>
+          <li>Delivered 15+ new features and resolved 20+ bugs</li>
+          <li>Implemented automated tests with 85% coverage</li>
+          <li>Supported deployment and integration of backend and UI modules</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="skills">
   <div class="container">
-    <h2>Skills & Technologies</h2>
+    <h2>Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>Frontend</h3>
+        <h3>Languages</h3>
         <ul>
-          <li>Angular</li>
-          <li>React</li>
+          <li>C#</li>
+          <li>Python</li>
+          <li>C++</li>
+          <li>JavaScript</li>
           <li>TypeScript</li>
           <li>HTML5/CSS3</li>
-          <li>SCSS/SASS</li>
         </ul>
       </div>
       <div class="skill-category">
-        <h3>Backend</h3>
+        <h3>Frameworks</h3>
         <ul>
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>Python</li>
-          <li>Django</li>
-          <li>RESTful APIs</li>
+          <li>.NET Core</li>
+          <li>ASP.NET MVC</li>
+          <li>Angular</li>
+          <li>LINQ</li>
+          <li>Entity Framework</li>
         </ul>
       </div>
       <div class="skill-category">
-        <h3>Database</h3>
+        <h3>Databases</h3>
         <ul>
-          <li>MongoDB</li>
-          <li>PostgreSQL</li>
+          <li>Oracle</li>
           <li>MySQL</li>
-          <li>Firebase</li>
+          <li>PL/SQL</li>
+          <li>SQL Server</li>
         </ul>
       </div>
       <div class="skill-category">
-        <h3>Tools & Others</h3>
+        <h3>Cloud & DevOps</h3>
         <ul>
-          <li>Git</li>
-          <li>Docker</li>
           <li>AWS</li>
+          <li>Jenkins</li>
+          <li>Docker</li>
+          <li>Git/GitHub/GitLab</li>
           <li>CI/CD</li>
-          <li>Agile/Scrum</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="achievements">
+  <div class="container">
+    <h2>Certifications & Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement-item">
+        <h3>Education</h3>
+        <p>B.Tech (Hons.) in Electronics and Communication Engineering</p>
+        <p class="institution">NIT Jamshedpur</p>
+        <p class="grade">CGPA: 7.84/10</p>
+      </div>
+      <div class="achievement-item">
+        <h3>Certifications</h3>
+        <ul>
+          <li>C# Developer</li>
+          <li>ASP.NET MVC 5</li>
+          <li>Python Bootcamp (Udemy)</li>
+        </ul>
+      </div>
+      <div class="achievement-item">
+        <h3>Coding Profiles</h3>
+        <ul>
+          <li>LeetCode: 200+ problems solved</li>
+          <li>GeeksforGeeks: 400+ problems solved</li>
         </ul>
       </div>
     </div>

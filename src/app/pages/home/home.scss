@@ -1,14 +1,14 @@
 @import '../../../styles/variables';
 
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, lighten($primary-color, 40%) 0%, lighten($accent-color, 40%) 100%);
   padding: 4rem 0;
 
   .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
 
@@ -38,6 +38,9 @@
       color: $secondary-color;
       margin-bottom: 2rem;
       line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
 
       @media (max-width: $breakpoint-md) {
         font-size: 1.125rem;
@@ -80,26 +83,73 @@
   }
 }
 
-.featured-projects {
-  padding: 6rem 0;
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
 
-  h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: $text-color;
-    margin-bottom: 3rem;
-  }
+  .experience-item {
+    background-color: $bg-color;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: $transition-base;
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      color: $text-color;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .role {
+      color: $primary-color;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .date {
+      color: $secondary-color;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        color: $text-color;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.4;
+
+        &:before {
+          content: '→';
+          color: $primary-color;
+          margin-right: 0.5rem;
+          flex-shrink: 0;
+        }
+      }
+    }
   }
 }
 
 .skills {
   padding: 6rem 0;
   background-color: darken($bg-color, 2%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   h2 {
     text-align: center;
@@ -118,6 +168,12 @@
       padding: 2rem;
       border-radius: $border-radius;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: $transition-base;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
 
       h3 {
         color: $primary-color;
@@ -145,5 +201,99 @@
         }
       }
     }
+  }
+}
+
+.achievements {
+  padding: 6rem 0;
+  background-color: $bg-color;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 3rem;
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+
+    .achievement-item {
+      background-color: $bg-color;
+      padding: 2rem;
+      border-radius: $border-radius;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: $transition-base;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        color: $primary-color;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $primary-color;
+      }
+
+      p {
+        color: $text-color;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .institution {
+        color: $primary-color;
+        font-weight: 500;
+      }
+
+      .grade {
+        color: $secondary-color;
+        font-size: 0.9rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          color: $text-color;
+          margin-bottom: 0.75rem;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: '→';
+            color: $primary-color;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 3rem;
   }
 }
