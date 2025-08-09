@@ -49,7 +49,7 @@
                   "maximumError": "8kB"
                 }
               ],
-              "baseHref": "/GITHUB_project/",
+              "baseHref": "/website/",
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
