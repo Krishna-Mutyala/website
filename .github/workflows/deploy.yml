@@ -12,13 +12,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+      
+    - name: Use Node.js 20.19.0
+      uses: actions/setup-node@v4
       with:
         node-version: '20'   # Angular CLI now requires >= 20.19
         cache: 'npm'
-
+        
     - name: Install dependencies
       run: npm ci
 
