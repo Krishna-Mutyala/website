@@ -18,15 +18,32 @@ export class Portfolio {
       return of(this.cachedProjects);
     }
 
-    // Fallback data in case API is not ready
-    const fallbackProjects: Project[] = [
+    // Project data
+    const projects: Project[] = [
       {
         id: 1,
         title: 'Portfolio Website',
-        description: 'Modern portfolio website built with Angular',
-        technologies: ['Angular', 'TypeScript', 'SCSS', 'RxJS'],
-        imageUrl: 'assets/images/portfolio.jpg',
-        githubUrl: 'https://github.com/yourusername/portfolio'
+        description: 'Production-grade Angular SPA using modular components, robust form validation, REST API integration, accessibility (WCAG), SEO, and mobile-first responsive design.',
+        technologies: ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'REST API'],
+        imageUrl: 'assets/images/projects/portfolio-preview.webp',
+        githubUrl: 'https://github.com/Krishna-Mutyala/website',
+        liveUrl: 'https://krishna-mutyala.github.io/website'
+      },
+      {
+        id: 2,
+        title: 'Enterprise Analytics Platform',
+        description: 'Developed high-performance RESTful APIs in .NET Core with Angular UI for enterprise analytics, featuring automated report generation and workflow automation pipelines.',
+        technologies: ['C#', '.NET Core', 'Angular', 'SQL Server', 'Jenkins'],
+        imageUrl: 'assets/images/projects/analytics-dashboard.webp',
+        githubUrl: 'https://github.com/Krishna-Mutyala'
+      },
+      {
+        id: 3,
+        title: 'Automated Testing Framework',
+        description: 'Implemented comprehensive automated testing framework achieving 85% coverage, integrating xUnit and Postman for backend and API testing.',
+        technologies: ['xUnit', 'Postman', 'C#', 'Python', 'CI/CD'],
+        imageUrl: 'assets/images/projects/testing-framework.webp',
+        githubUrl: 'https://github.com/Krishna-Mutyala'
       }
     ];
 
@@ -40,7 +57,7 @@ export class Portfolio {
     // );
 
     // Using fallback data for now
-    return of(fallbackProjects);
+    return of(projects);
   }
 
   getProjectById(id: number): Observable<Project | undefined> {

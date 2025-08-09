@@ -1,7 +1,14 @@
 @import '../../../styles/variables';
 
 .about {
-  padding: 6rem 0;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba($primary-color, 0.05) 0%, rgba($accent-color, 0.05) 100%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
   .about-content {
     display: grid;
@@ -14,31 +21,58 @@
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: $text-color;
     margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $accent-color);
+      border-radius: 2px;
+    }
   }
 
   .intro {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: $primary-color;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.6;
+    font-weight: 500;
   }
 
   .about-section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    background: $bg-color;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: $text-color;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid $primary-color;
     }
 
     p {
       color: $secondary-color;
-      line-height: 1.6;
-      margin-bottom: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
     }
 
     ul {
@@ -47,32 +81,52 @@
 
       li {
         color: $secondary-color;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        line-height: 1.6;
+        font-size: 1.1rem;
 
         &:before {
-          content: '•';
+          content: '→';
           color: $primary-color;
-          margin-right: 0.5rem;
+          margin-right: 0.75rem;
+          font-weight: bold;
         }
       }
+    }
+
+    &.expertise-list li {
+      font-weight: 500;
     }
   }
 
   .experience-education {
     .section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      background: $bg-color;
+      padding: 2rem;
+      border-radius: $border-radius;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: $transition-base;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         color: $text-color;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $primary-color;
       }
     }
 
     .timeline {
       position: relative;
+      padding-left: 2rem;
 
       &:before {
         content: '';
@@ -81,42 +135,56 @@
         top: 0;
         width: 2px;
         height: 100%;
-        background-color: $border-color;
+        background: linear-gradient(180deg, $primary-color, $accent-color);
+        border-radius: 1px;
       }
     }
 
     .timeline-item {
       position: relative;
-      padding-left: 2rem;
-      padding-bottom: 2rem;
+      padding-bottom: 2.5rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
 
       &:before {
         content: '';
         position: absolute;
-        left: -5px;
+        left: -2.4rem;
         top: 0;
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         background-color: $primary-color;
+        border: 3px solid $bg-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
       }
 
       h3 {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
         color: $text-color;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
       }
 
       .company {
         color: $primary-color;
-        font-weight: 500;
-        margin-bottom: 0.25rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
       }
 
       .period {
         color: $secondary-color;
-        font-size: 0.875rem;
-        margin-bottom: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+        font-weight: 500;
+      }
+
+      .grade {
+        color: $primary-color;
+        font-weight: 500;
+        margin-top: 0.5rem;
       }
 
       ul {
@@ -125,16 +193,36 @@
 
         li {
           color: $secondary-color;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.75rem;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
+          line-height: 1.6;
 
           &:before {
-            content: '•';
+            content: '→';
             color: $primary-color;
-            margin-right: 0.5rem;
+            margin-right: 0.75rem;
+            font-weight: bold;
           }
         }
+      }
+    }
+  }
+
+  .coding-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    li {
+      background: rgba($primary-color, 0.1);
+      padding: 0.75rem 1.25rem;
+      border-radius: 2rem;
+      color: $primary-color !important;
+      font-weight: 500;
+
+      &:before {
+        display: none;
       }
     }
   }
