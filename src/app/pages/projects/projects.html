@@ -1,0 +1,15 @@
+<section class="projects">
+  <div class="container">
+    <div class="projects-header">
+      <h1>My Projects</h1>
+      <p>A collection of my recent work in web development and software engineering.</p>
+    </div>
+
+    <div class="projects-grid">
+      <app-project-card 
+        *ngFor="let project of projects$ | async"
+        [project]="project">
+      </app-project-card>
+    </div>
+  </div>
+</section>

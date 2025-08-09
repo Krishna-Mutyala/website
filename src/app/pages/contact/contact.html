@@ -1,0 +1,112 @@
+<section class="contact-section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h1 id="contact-heading">Get in Touch</h1>
+        <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+        
+        <div class="contact-methods">
+          <div class="contact-method">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <div class="method-details">
+              <h3>Email</h3>
+              <p><a href="mailto:krishna.mutyala@example.com" aria-label="Email me">krishna.mutyala@example.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <div class="method-details">
+              <h3>GitHub</h3>
+              <p><a href="https://github.com/Krishna-Mutyala" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">github.com/Krishna-Mutyala</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <div class="method-details">
+              <h3>LinkedIn</h3>
+              <p><a href="https://linkedin.com/in/krishnarao-mutyala" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn">linkedin.com/in/krishnarao-mutyala</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2 id="form-heading">Send me a message</h2>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" aria-labelledby="form-heading" novalidate>
+          <div class="form-group" [class.has-error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            <label for="name" class="required">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name"
+              [attr.aria-invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+              aria-describedby="name-error">
+            <div *ngIf="getErrorMessage('name')" id="name-error" class="error-message" role="alert">
+              {{ getErrorMessage('name') }}
+            </div>
+          </div>
+
+          <div class="form-group" [class.has-error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            <label for="email" class="required">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email"
+              [attr.aria-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+              aria-describedby="email-error">
+            <div *ngIf="getErrorMessage('email')" id="email-error" class="error-message" role="alert">
+              {{ getErrorMessage('email') }}
+            </div>
+          </div>
+
+          <div class="form-group" [class.has-error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+            <label for="subject" class="required">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              formControlName="subject"
+              [attr.aria-invalid]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+              aria-describedby="subject-error">
+            <div *ngIf="getErrorMessage('subject')" id="subject-error" class="error-message" role="alert">
+              {{ getErrorMessage('subject') }}
+            </div>
+          </div>
+
+          <div class="form-group" [class.has-error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            <label for="message" class="required">Message</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              rows="5"
+              [attr.aria-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+              aria-describedby="message-error"></textarea>
+            <div *ngIf="getErrorMessage('message')" id="message-error" class="error-message" role="alert">
+              {{ getErrorMessage('message') }}
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="btn btn-primary" 
+              [disabled]="contactForm.invalid || isSubmitting"
+              [attr.aria-busy]="isSubmitting">
+              <span *ngIf="!isSubmitting">Send Message</span>
+              <span *ngIf="isSubmitting">Sending...</span>
+            </button>
+          </div>
+
+          <div *ngIf="submitSuccess" class="alert alert-success" role="alert">
+            Thank you for your message! I'll get back to you as soon as possible.
+          </div>
+
+          <div *ngIf="submitError" class="alert alert-error" role="alert">
+            Sorry, there was an error sending your message. Please try again later.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
